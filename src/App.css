@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+/* Reset & Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Flexbox Layout */
+.site-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+.site-header,
+.site-footer {
+  padding: 1rem;
+  background-color: #333; /* Dark background for visibility */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.site-content {
+  flex: 1;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Navigation Menu Styles */
+.navbar {
+  width: 100%;
+  background-color: #333;
+}
+
+.nav-links {
+  list-style: none; /* Remove default list styling */
+  padding-left: 0; /* Remove default padding */
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center the links */
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Spacing between links */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  padding: 10px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #61dafb; /* Highlight color on hover/focus */
+  background-color: #555; /* Slight background on hover/focus for visibility */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Stack links vertically on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links li {
+    margin: 10px 0;
   }
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: white;
 }
